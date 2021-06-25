@@ -59,6 +59,7 @@ SELECT
        min(salary),
        max(salary)
 FROM employees
+WHERE to_char(hire_date,'yyyy') > 2005
 GROUP BY manager_id
 HAVING avg(salary)>=5000
 ORDER BY avg(salary) DESC;
