@@ -59,8 +59,8 @@ SELECT
        min(salary),
        max(salary)
 FROM employees
-WHERE to_char(hire_date,'yyyy') > 2005
-GROUP BY manager_id
+WHERE to_char(hire_date,'yyyy') > 2005 --Where을 먼저 정의
+GROUP BY manager_id -- 그 뒤에 그룹지정
 HAVING avg(salary)>=5000
 ORDER BY avg(salary) DESC;
 
@@ -68,7 +68,7 @@ ORDER BY avg(salary) DESC;
 SELECT first_name,
        hire_date,
       CASE
-            WHEN hire_date < to_date('20021231','YYYYMMDD') THEN '창설'
+            WHEN hire_date < to_date('20021231','YYYYMMDD') THEN '창설일'
             WHEN to_char(hire_date,'yyyy') in 2003 THEN '03년입사'
             WHEN to_char(hire_date,'yyyy') in 2004 THEN '04년입사'
             ELSE '상장이후입사'
