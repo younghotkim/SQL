@@ -143,14 +143,6 @@ AND de.manager_id = ma.employee_id
 AND de.location_id = lo.location_id
 AND co.country_id = lo.country_id
 AND co.region_id = re.region_id
-
-
-GROUP BY de.department_id,
-       de.department_name,
-       ma.first_name,
-       lo.city,
-       co.country_name,
-       re.region_name
     
 ORDER BY de.department_name ASC;   
 
